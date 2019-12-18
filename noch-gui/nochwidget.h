@@ -2,6 +2,7 @@
 #define NOCHWIDGET_H
 
 #include <QWidget>
+#include <QCryptographicHash>
 
 class QAbstractButton;
 #include <QNetworkAccessManager>
