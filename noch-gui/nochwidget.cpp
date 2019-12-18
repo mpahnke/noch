@@ -30,7 +30,7 @@ nochWidget::nochWidget(QWidget *parent) :
   connect( &manager, SIGNAL( finished( QNetworkReply*) ), SLOT(downloadFinished( QNetworkReply*) ) );
   //md5Generator( QCryptographicHash::Sha1 );
 
-  QSettings settings();
+  QSettings settings;
 }
 
 nochWidget::~nochWidget()
@@ -42,7 +42,8 @@ nochWidget::~nochWidget()
 void nochWidget::execute()
 {
   QStringList args = qApp->instance()->arguments();
-      args.takeFirst();           // skip the first argument, which is the program's name
+   qDebug() <<  args.takeFirst().toLocal8Bit();
+  //args.takeFirst();           // skip the first argument, which is the program's name
       if (args.isEmpty()) {
           qDebug() << "Qt Download example - downloads all URLs in parallel\n"
                  "Usage: download url1 [url2... urlN]\n"
@@ -116,6 +117,9 @@ void nochWidget::doDownload(const QUrl &url)
 {
     QNetworkRequest request(url);
     QNetworkReply *reply = manager.get(request);
+
+
+    //manager.
 
 //#ifndef QT_NO_SSL
 //    connect(reply, SIGNAL(sslErrors(QList<QSslError>)), SLOT(sslErrors(QList<QSslError>)));
