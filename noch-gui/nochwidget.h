@@ -38,7 +38,7 @@ public:
   void doDownload(const QUrl &url);
   QString saveFileName(const QUrl &url);
   bool saveToDisk(const QString &filename, QIODevice *data);
-  QByteArray calCS(const QString &filename, QCryptographicHash::Algorithm hashAlg);
+  QByteArray calcCheckSum(const QString &filename, QCryptographicHash::Algorithm hashAlg);
 
 public slots:
   void on_ClosebuttonBox_clicked(QAbstractButton *button);
