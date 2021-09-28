@@ -129,7 +129,7 @@ void nochWidget::doDownload(const QUrl &url)
 }
 
 
-QByteArray nochWidget::calCS( const QString &filename, QCryptographicHash::Algorithm hashAlg )
+QByteArray nochWidget::calcCheckSum(const QString &filename, QCryptographicHash::Algorithm hashAlg )
 {
   QCryptographicHash md5Generator( hashAlg );
   QFile file(filename);
